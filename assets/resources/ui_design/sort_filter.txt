@@ -1,0 +1,12 @@
+sort and filter priority >>> 
+
+sort:
+1: recent liked (last 5 prayers liked)
+2: display according to prayer size- (short- "") (medium- "") (long- "surmons") (ALL prayers)
+3: specific Catagory
+4: Date created
+5: Resonated with me?
+6: Answered
+
+
+

@@ -1,0 +1,25 @@
+{
+    "user_prayer_data":
+    {
+        "prayers_recent":[
+
+        ],
+    
+        "prayers_pinned":[
+            
+        ],
+        "prayer_Categories":[
+            
+        ],
+
+        "my_journey":{
+            "prayers_read_completely":[],
+            "prayers_resonated":[],
+            "prayers_answered":[],
+            "prayers_favored":[],
+            "total_time_spent_reading":0 
+        }
+    }
+    
+    
+}
