@@ -2,9 +2,22 @@ import 'package:flutter/material.dart';
 import 'app_theme/app_theme.dart';
 
 String pathToUiImages = 'assets/images/ui/';
+String pathToBackgrounds = 'assets/images/backgrounds/';
 String p4mLogo = ('${pathToUiImages}logo2.png');
 
 //background wallpaper images
+List<String> backgroundImagesList = [
+  ('${pathToBackgrounds}I0TrumpThumbs.png'),
+  ('${pathToBackgrounds}I1TrumpSmile.png'),
+  ('${pathToBackgrounds}I2Yena.png'),
+  ('${pathToBackgrounds}I3JayAlicia.png'),
+  ('${pathToBackgrounds}I4KidRally.png'),
+  ('${pathToBackgrounds}I5MAGA.png'),
+  ('${pathToBackgrounds}I6Election.png'),
+  ('${pathToBackgrounds}I7EagleView.png'),
+  ('${pathToBackgrounds}I8TrumpSign.png'),
+  ('${pathToBackgrounds}I9TrumpGreet.png')
+];
 List<String> uiBGImagesList = [
   ('${pathToUiImages}aFreshStart.png'),
   ('${pathToUiImages}cresentDusk.jpeg'),
@@ -42,17 +55,17 @@ String stripPaths(pathFileName) {
   return rawNameOnly;
 }
 
-  ThemeData themeChange(varriantChoice) {
-    final Map allThemes = <String, ThemeData>{
-      'classicLight': P4MThemes.p4MClassicLightTheme,
-      'classicDark': P4MThemes.p4MClassicdarkTheme,
-      'summer': P4MThemes.summerTheme,
-      'autumn': P4MThemes.autumnTheme,
-      'dusk': P4MThemes.duskTheme,
-      'winter': P4MThemes.winterTheme,
-      'midnight': P4MThemes.midnightTheme,
-      'cloud9': P4MThemes.cloud9Theme,
-    };
+ThemeData themeChange(varriantChoice) {
+  final Map allThemes = <String, ThemeData>{
+    'classicLight': P4MThemes.p4MClassicLightTheme,
+    'classicDark': P4MThemes.p4MClassicdarkTheme,
+    'summer': P4MThemes.summerTheme,
+    'autumn': P4MThemes.autumnTheme,
+    'dusk': P4MThemes.duskTheme,
+    'winter': P4MThemes.winterTheme,
+    'midnight': P4MThemes.midnightTheme,
+    'cloud9': P4MThemes.cloud9Theme,
+  };
 
-    return allThemes[varriantChoice];
-  }
+  return allThemes[varriantChoice];
+}

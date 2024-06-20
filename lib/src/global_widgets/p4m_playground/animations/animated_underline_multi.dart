@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, use_super_parameters
+
 import 'package:flutter/material.dart';
 
 class AnimatedUnderlineList extends StatefulWidget {
@@ -5,7 +7,6 @@ class AnimatedUnderlineList extends StatefulWidget {
   final int selectedIndex;
   final Function(int) onCategorySelected;
 
-  // ignore: use_super_parameters
   const AnimatedUnderlineList({
     Key? key,
     required this.categories,
@@ -14,7 +15,6 @@ class AnimatedUnderlineList extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _AnimatedUnderlineListState createState() => _AnimatedUnderlineListState();
 }
 

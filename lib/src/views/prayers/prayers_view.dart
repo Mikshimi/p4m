@@ -1,64 +1,80 @@
-// views/prayers_view.dart
-import 'dart:typed_data';
+// ignore_for_file: library_private_types_in_public_api
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+// ignore: unused_import
+import 'package:pray_for_me/src/global_widgets/alert_service.dart';
 import '../../models/prayer.dart';
-import '../../services/file_storage_service.dart';
-import '../../services/msgpack_service.dart';
-
+import '../../p4m_app.dart';
+import '../../services/storage_service.dart';
 
 class PrayerPage extends StatefulWidget {
   const PrayerPage({super.key});
   static const routeName = '/prayer';
 
   @override
-  // ignore: library_private_types_in_public_api
   _PrayerPageState createState() => _PrayerPageState();
 }
 
 class _PrayerPageState extends State<PrayerPage> {
-  final MsgpackService _msgpackService = MsgpackService();
-  final FileStorageService _fileStorageService = FileStorageService();
-  
+  late final StorageService _storageService;
+
+  @override
+  void initState() {
+    super.initState();
+    // Retrieve the storage service from the SettingsController
+    _storageService = context
+        .findAncestorWidgetOfExactType<Pray4MeApp>()!
+        .settingsController
+        .storageService;
+  }
+
   Future<void> savePrayer() async {
     Prayer prayer = Prayer(
-      prayerCode: "TEC_ETH_01",
-      prayerTitle: "Innovation in Technology",
-      prayerCategory: "Technocratic Ideals",
-      prayerSubCategory: "Ethical AI",
-      prayerDescription: "A prayer for inspiration and breakthroughs in technology.",
-      prayerBody: "Lord, grant us the wisdom and creativity to innovate and develop technologies that improve lives and advance humanity. May our work in technology be guided by integrity and a desire to serve the greater good.",
-      prayerAuthor: "Unknown",
-      prayerWordcount: 35,
-      prayerFaith: "Non-denominational",
-      prayerDateCreated: "2024-06-13",
-      prayerResonate: 0,
-      prayerAnswered: "No",
-      prayerAttachments: [],
-      prayerComments: [],
-    );
+        prayerCode: "TEC_ETH_01",
+        prayerTitle: "Innovation in Technology",
+        prayerCategory: "Technocratic Ideals",
+        prayerSubCategory: "Ethical AI",
+        prayerDescription:
+            "A prayer for inspiration and breakthroughs in technology.",
+        prayerBody:
+            "Lord, grant us the wisdom and creativity to innovate and develop technologies that improve lives and advance humanity. May our work in technology be guided by integrity and a desire to serve the greater good.",
+        prayerAuthor: "Unknown",
+        prayerWordcount: 35,
+        prayerFaith: "Non-denominational",
+        prayerDateCreated: "2024-06-13",
+        prayerResonate: 0,
+        prayerAnswered: "No",
+        prayerAttachments: [],
+        prayerComments: [],
+        prayerRead: false);
 
-    Uint8List data = _msgpackService.serializePrayer(prayer);
-    await _fileStorageService.writeData('prayer_tec_eth_01.msgpack', data);
+    // Save the prayer using the appropriate storage service
+    await _storageService.saveData('prayer_tec_eth_01', prayer.toMap());
   }
 
   Future<void> loadPrayer() async {
-    Uint8List data = await _fileStorageService.readData('prayer_tec_eth_01.msgpack');
-    Prayer prayer = _msgpackService.deserializePrayer(data);
-    print('Loaded Prayer: ${prayer.prayerBody}');
+    // Load the prayer using the appropriate storage service
+    Map<String, dynamic> prayerMap =
+        await _storageService.loadData('prayer_tec_eth_01');
+    Prayer prayer = Prayer.fromMap(prayerMap);
+    if (kDebugMode) {
+      print('Loaded Prayer: ${prayer.prayerBody}');
+    }
   }
 
   Future<void> deletePrayer() async {
-    await _fileStorageService.deleteData('prayer_tec_eth_01.msgpack');
-    print('Prayer deleted');
+    // Delete the prayer using the appropriate storage service
+    await _storageService.deleteData('prayer_tec_eth_01');
+    if (kDebugMode) {
+      print('Prayer deleted');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       restorationId: 'prayers',
-
       appBar: AppBar(
         title: const Text('Prayer Storage Example'),
       ),
@@ -66,6 +82,7 @@ class _PrayerPageState extends State<PrayerPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            
             ElevatedButton(
               onPressed: savePrayer,
               child: const Text('Save Prayer'),

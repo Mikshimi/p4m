@@ -28,6 +28,7 @@ class Dimensions {
   static final p4mBorderRadiusAllMedium = BorderRadius.circular(20).w;
   static final p4mBorderRadiusAllSmall = BorderRadius.circular(16).w;
   static final p4mBorderRadiusAllSmallest = BorderRadius.circular(6).w;
+
   static final p4mBottomNavBarMargin = const EdgeInsets.symmetric(
     horizontal: 50.0,
     vertical: 20.0,
@@ -70,6 +71,10 @@ class Dimensions {
   static final p4mRadiusAllSmallest = const Radius.circular(6).w;
 
   //Screen Size
+  static final p4mScreenHeight = 100.sh;
+  static final p4mScreenWidth = 100.sw;
+
+  //Fractions of Screen Size usefull for
   static final p4mScreenHeight30 = 0.3.sh;
   static final p4mScreenHeight40 = 0.4.sh;
   static final p4mScreenHeight50 = 0.5.sh;

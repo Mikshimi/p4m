@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//in use for the app, the other two transitions were experimental
 PageRouteBuilder<dynamic> createRouteWithTransition(
     Widget page, String routeName) {
   return PageRouteBuilder(

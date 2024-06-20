@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../../helpers/dimensions.dart';
 import 'example_responsive.dart';
 
+
+//the view able pages for the end user will be built with this in mind.
+
 class AdaptiveWidget extends StatelessWidget {
   const AdaptiveWidget({super.key});
 

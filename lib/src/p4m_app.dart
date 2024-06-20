@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'views/home/home_screen.dart';
+import 'views/home/home_layout_manager.dart';
 import 'global_widgets/image_switcher.dart';
 import 'views/prayers/prayers_view.dart';
 import 'views/splash/splash_view.dart';
@@ -53,11 +53,11 @@ class Pray4MeApp extends StatelessWidget {
                       return const SplashView();
                     case SettingsView.routeName:
                       return SettingsView(controller: settingsController);
-                    case HomeScreen.routeName:
-                      return const HomeScreen();
+                    case HomeLayoutManager.routeName:
+                      return const HomeLayoutManager();
                     default:
                       return const SplashView();
-                      /*
+                    /*
                       the default should first start with onboard screen
                       if its the first time the user uses p4m app. once a user
                       is saved with shared prefs or with other means, splash

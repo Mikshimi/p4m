@@ -12,7 +12,7 @@ class RoundedInputField extends StatelessWidget {
   const RoundedInputField(
       {required Key key,
       required this.hintText,
-      this.icon = Icons.person,
+      this.icon = Icons.search_off_outlined,
       required this.onChanged,
       required this.textEditingController,
       required this.cursorColor,

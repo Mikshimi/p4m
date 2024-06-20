@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, use_super_parameters
+// location 'src/global_widgets/p4m_playground/animations/animated_line_single.dart'
 import 'package:flutter/material.dart';
 
 class AnimatedUnderSingle extends StatefulWidget {
@@ -7,7 +9,6 @@ class AnimatedUnderSingle extends StatefulWidget {
   final Color underlineColor;
   final double fontSize;
 
-  // ignore: use_super_parameters
   const AnimatedUnderSingle({
     Key? key,
     required this.text,
@@ -18,9 +19,7 @@ class AnimatedUnderSingle extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _AnimatedUnderSingleState createState() =>
-      _AnimatedUnderSingleState();
+  _AnimatedUnderSingleState createState() => _AnimatedUnderSingleState();
 }
 
 class _AnimatedUnderSingleState extends State<AnimatedUnderSingle> {
@@ -60,10 +59,10 @@ class _AnimatedUnderSingleState extends State<AnimatedUnderSingle> {
 }
 
 /*
-  use case: 
+  use case example: 
   AnimatedUnderlineText(
   text: 'Some Heading',
-  isSelected: true, // or false based on your logic
+  isSelected: true, // or false based on the logic
   textColor: Colors.red,
   underlineColor: Colors.red,
   fontSize: 28.0,

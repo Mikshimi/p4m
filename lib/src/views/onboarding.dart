@@ -12,6 +12,13 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /*
+      This screen is basically a visual condensed readme about the app yes
+        - displays 'pray for me' as a product and briefly explains most of the 
+        - > features available for the user to consume
+        - This screen appears only at the first instance run. once the user is
+        - > initialized, then it will remain disabled indefinately. 
+    */
     // SharedPreferences special = await SharedPreferences.getInstance();
     return IntroductionScreen(
       pages: [

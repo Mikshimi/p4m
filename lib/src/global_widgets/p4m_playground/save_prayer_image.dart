@@ -17,7 +17,7 @@ class SavePrayerImage extends StatelessWidget {
           child: const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Your Prayer Text Here', style: TextStyle(fontSize: 24)),
+              Text('Prayer Text Here', style: TextStyle(fontSize: 24)),
               // Additional widgets like background image, logo, etc.
             ],
           ),

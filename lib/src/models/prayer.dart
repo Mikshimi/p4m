@@ -1,3 +1,6 @@
+/*
+  the purpose of this class is to turn each prayer from raw data into an object
+*/
 class Prayer {
   String prayerCode;
   String prayerTitle;
@@ -11,6 +14,7 @@ class Prayer {
   String prayerDateCreated;
   int prayerResonate;
   String prayerAnswered;
+  bool prayerRead;
   List<String> prayerAttachments;
   List<String> prayerComments;
 
@@ -29,6 +33,7 @@ class Prayer {
     required this.prayerAnswered,
     required this.prayerAttachments,
     required this.prayerComments,
+    required this.prayerRead
   });
 
   Map<String, dynamic> toMap() {
@@ -47,6 +52,7 @@ class Prayer {
       'prayerAnswered': prayerAnswered,
       'prayerAttachments': prayerAttachments,
       'prayerComments': prayerComments,
+      'prayerRead': prayerRead
     };
   }
 
@@ -66,6 +72,7 @@ class Prayer {
       prayerAnswered: map['prayerAnswered'],
       prayerAttachments: List<String>.from(map['prayerAttachments']),
       prayerComments: List<String>.from(map['prayerComments']),
+      prayerRead: map['prayerRead']
     );
   }
 }

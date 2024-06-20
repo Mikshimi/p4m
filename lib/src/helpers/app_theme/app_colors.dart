@@ -45,10 +45,10 @@ class TessColors {
   */
   
   static const Color winterL1 = Color(0XFFCCD5AE);
-  static const Color winterL2 = Color(0XFF);
-  static const Color winterL3 = Color(0XFF);
-  static const Color winterL4 = Color(0XFF);
-  static const Color winterL5 = Color(0XFF);
+  // static const Color winterL2 = Color(0XFF);
+  // static const Color winterL3 = Color(0XFF);
+  // static const Color winterL4 = Color(0XFF);
+  // static const Color winterL5 = Color(0XFF);
 
   /*
   Part 3: America Light
