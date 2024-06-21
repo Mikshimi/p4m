@@ -19,13 +19,12 @@ class SettingsController with ChangeNotifier {
   StorageService get storageService => _storageService;
 
   Future<void> loadSettings() async {
-
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    
+
     if (prefs.containsKey("userSetTheme")) {
       _themeData = await _settingsService.themeData();
     } else {
-      _themeData = P4MThemes.duskTheme;
+      _themeData = P4MThemes.cloud9Theme;
     }
 
     // Determine the platform and set the storage service

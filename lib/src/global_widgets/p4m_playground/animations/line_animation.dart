@@ -5,10 +5,10 @@ class LineAnimation extends StatefulWidget {
   final VoidCallback onAnimationComplete;
 
   const LineAnimation(
-      {Key? key, required this.letter, required this.onAnimationComplete})
-      : super(key: key);
+      {super.key, required this.letter, required this.onAnimationComplete});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LineAnimationState createState() => _LineAnimationState();
 }
 
@@ -21,7 +21,7 @@ class _LineAnimationState extends State<LineAnimation>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 3), // Increase duration to 3 seconds
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
     _animation = CurvedAnimation(
@@ -39,8 +39,8 @@ class _LineAnimationState extends State<LineAnimation>
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 50, // Adjust as needed for your design
-      height: 50, // Adjust as needed for your design
+      width: 70,
+      height: 70,
       child: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
@@ -68,8 +68,8 @@ class _LetterPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.grey.shade400 // Use a lighter color
-      ..strokeWidth = 4.0
+      ..color = const Color.fromARGB(255, 255, 174, 0).withOpacity(0.8) 
+      ..strokeWidth = 2.0
       ..style = PaintingStyle.stroke;
 
     final path = Path();
@@ -83,7 +83,7 @@ class _LetterPainter extends CustomPainter {
         path.lineTo(0, size.height / 2);
         break;
       case '4':
-        path.moveTo(size.width, size.height); // Adjust to correct the inversion
+        path.moveTo(size.width, size.height);
         path.lineTo(size.width, 0);
         path.lineTo(0, size.height / 2);
         path.lineTo(size.width, size.height / 2);

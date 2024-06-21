@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class EllipsesAnimation extends StatefulWidget {
   final VoidCallback onAnimationComplete;
 
-  const EllipsesAnimation({Key? key, required this.onAnimationComplete}) : super(key: key);
+  const EllipsesAnimation({super.key, required this.onAnimationComplete});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EllipsesAnimationState createState() => _EllipsesAnimationState();
 }
 
-class _EllipsesAnimationState extends State<EllipsesAnimation> with SingleTickerProviderStateMixin {
+class _EllipsesAnimationState extends State<EllipsesAnimation>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -38,8 +40,9 @@ class _EllipsesAnimationState extends State<EllipsesAnimation> with SingleTicker
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
                 child: CircleAvatar(
-                  radius: 8.0,
-                  backgroundColor: Colors.blue.withOpacity(_controller.value),
+                  radius: 4.0,
+                  backgroundColor: const Color.fromARGB(255, 252, 172, 2)
+                      .withOpacity(_controller.value),
                 ),
               );
             }),

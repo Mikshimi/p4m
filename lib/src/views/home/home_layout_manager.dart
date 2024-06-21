@@ -20,6 +20,7 @@ class _HomeLayoutManagerState extends State<HomeLayoutManager> {
     
     var mediaQuery = MediaQuery.of(context);
     var screenWidth = mediaQuery.size.width;
+
     var screenOrientation = mediaQuery.orientation;
 
     //add animations to the transitions/loading the required screen

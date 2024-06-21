@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../global_widgets/p4m_playground/animations/page_transition_1.dart';
 import '../home/home_layout_manager.dart';
-// ignore: unused_import
-import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../services/loading_service.dart';
-import 'ellipses_animation.dart';
-import 'line_animation.dart';
+import '../../global_widgets/p4m_playground/animations/ellipses_animation.dart';
+import '../../global_widgets/p4m_playground/animations/line_animation.dart';
+import '../../global_widgets/p4m_playground/animations/page_transition_1.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -32,15 +30,12 @@ class _SplashViewState extends State<SplashView> {
     await _loadingService.loadPrayerLibrary();
     setState(() {
       dataLoaded = true;
-      if (animationCompleted) {
-        _navigateToHome();
-      }
     });
   }
 
   void _onEllipsesAnimationComplete() {
     setState(() {
-      showEllipses = false;
+      showEllipses = false; //to revist another day yes
     });
   }
 
@@ -70,9 +65,6 @@ class _SplashViewState extends State<SplashView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            EllipsesAnimation(
-                onAnimationComplete: _onEllipsesAnimationComplete),
-            const SizedBox(height: 20),
             if (dataLoaded)
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -87,6 +79,9 @@ class _SplashViewState extends State<SplashView> {
                       letter: 'M', onAnimationComplete: _onAnimationComplete),
                 ],
               ),
+            const SizedBox(height: 20),
+            EllipsesAnimation(
+                onAnimationComplete: _onEllipsesAnimationComplete),
           ],
         ),
       ),

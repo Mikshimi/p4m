@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../helpers/dimensions.dart';
 import '../../../helpers/theme_constants.dart';
+import '../../settings/settings_view.dart';
 
 class HomeLargeScreen extends StatefulWidget {
   const HomeLargeScreen({
@@ -17,7 +18,7 @@ class _HomeLargeScreenState extends State<HomeLargeScreen> {
   @override
   Widget build(BuildContext context) {
     int displayedImage = 4;
-    bool loadWidgets = false;
+    bool loadWidgets = true;
 
     return Scaffold(
         /*We're skipping the app bar for a custom design. there are features 
@@ -33,18 +34,32 @@ class _HomeLargeScreenState extends State<HomeLargeScreen> {
             fit: BoxFit.fill),
       ),
       child: ad2(loadWidgets),
-      
     ));
   }
 
   Container ad2(loadWidgets) {
     if (loadWidgets == true) {
       return Container(
-        width: Dimensions.p4mScreenWidth,
-        height: Dimensions.p4mScreenWidth,
-        decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
-        child: const Text("Container Live on Large"),
-      );
+          width: Dimensions.p4mScreenWidth,
+          height: Dimensions.p4mScreenWidth,
+          decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
+          child: Row(
+            children: [
+              Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.settings_outlined,
+                    size: Dimensions.iconSizeMedium,
+                  ),
+                  onPressed: () {
+                    Navigator.restorablePushNamed(
+                        context, SettingsView.routeName);
+                  },
+                ),
+                const Spacer()
+              ]),
+            ],
+          ));
     }
     return Container(
       alignment: Alignment.bottomCenter,

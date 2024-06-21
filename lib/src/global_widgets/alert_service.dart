@@ -31,6 +31,7 @@ class AlertService {
 
   }
 
+  // ignore: unused_element
   Color _chooseColor(AlertType type) {
     if (type == AlertType.success) {
       return Colors.green;
@@ -41,6 +42,7 @@ class AlertService {
     }
   }
 
+  // ignore: unused_element
   String _chooseTitle(String title, AlertType type) {
     if (type == AlertType.success) {
       return "Success!!!";
@@ -51,6 +53,7 @@ class AlertService {
     }
   }
 
+  // ignore: unused_element
   IconData _chooseIcon(AlertType type) {
     if (type == AlertType.success) {
       return Icons.check_circle_outline;

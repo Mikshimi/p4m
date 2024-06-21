@@ -1,0 +1,8 @@
+Raw text Form
+1: use split symbol '#' between each item within a prayer
+2: each prayer is on its own line. 
+3: order is as follows 
+>'prayer_Title#prayer_Catagory#prayer_sub_Catagory#prayer_Description#prayer_Body#prayer_Author#prayer_Date_Created#prayer_Faith'
+examples of rule implementation below:
+'Divine Guidance'#'Spiritual Needs'#'Guidance'#'A plea for divine direction and wisdom.'#'Lord, guide my steps in the path of righteousness. Illuminate my path with your light, and lead me through the challenges of life. Grant me discernment to make choices that honor you.'#'2024-06-13'#'Unknown'#'Christianity'
+'Innovation in Technology'#'Technocratic Ideals'#'Ethical AI'#'A prayer for inspiration and breakthroughs in technology.'#'Lord, grant us the wisdom and creativity to innovate and develop technologies that improve lives and advance humanity. May our work in technology be guided by integrity and a desire to serve the greater good.'#'2024-06-13'#'Zara Z'#'Non-denominational'
