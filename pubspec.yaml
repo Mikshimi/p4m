@@ -93,6 +93,8 @@ flutter:
     - assets/images/ui/
     - assets/images/language/
     - assets/images/user_images/profile/
+    - assets/p4m_library.txt
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import '../home/home_layout_manager.dart';
 import '../../services/loading_service.dart';
 import '../../global_widgets/p4m_playground/animations/ellipses_animation.dart';
 import '../../global_widgets/p4m_playground/animations/line_animation.dart';
 import '../../global_widgets/p4m_playground/animations/page_transition_1.dart';
+import '../../services/path_provider_service.dart';
+import '../home/home_layout_manager.dart';
 
 class SplashView extends StatefulWidget {
-  const SplashView({super.key});
+  final String libraryName;
+
+  const SplashView({super.key, required this.libraryName});
+
   static const routeName = '/splash';
 
   @override
@@ -14,7 +18,7 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  final LoadingService _loadingService = LoadingService();
+  final LoadingService _loadingService = LoadingService(PathProviderService());
   bool dataLoaded = false;
   bool animationCompleted = false;
   bool showEllipses = true;
@@ -27,7 +31,7 @@ class _SplashViewState extends State<SplashView> {
 
   Future<void> _loadData() async {
     await _loadingService.loadUserData();
-    await _loadingService.loadPrayerLibrary();
+    await _loadingService.loadPrayerLibrary(widget.libraryName);
     setState(() {
       dataLoaded = true;
     });
@@ -35,7 +39,7 @@ class _SplashViewState extends State<SplashView> {
 
   void _onEllipsesAnimationComplete() {
     setState(() {
-      showEllipses = false; //to revist another day yes
+      showEllipses = false;
     });
   }
 
@@ -52,7 +56,9 @@ class _SplashViewState extends State<SplashView> {
     Navigator.pushReplacement(
       context,
       createRouteWithTransition(
-          const HomeLayoutManager(), HomeLayoutManager.routeName),
+        const HomeLayoutManager(),
+        HomeLayoutManager.routeName,
+      ),
     );
   }
 
@@ -70,13 +76,19 @@ class _SplashViewState extends State<SplashView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   LineAnimation(
-                      letter: 'P', onAnimationComplete: _onAnimationComplete),
+                    letter: 'P',
+                    onAnimationComplete: _onAnimationComplete,
+                  ),
                   const SizedBox(width: 10),
                   LineAnimation(
-                      letter: '4', onAnimationComplete: _onAnimationComplete),
+                    letter: '4',
+                    onAnimationComplete: _onAnimationComplete,
+                  ),
                   const SizedBox(width: 10),
                   LineAnimation(
-                      letter: 'M', onAnimationComplete: _onAnimationComplete),
+                    letter: 'M',
+                    onAnimationComplete: _onAnimationComplete,
+                  ),
                 ],
               ),
             const SizedBox(height: 20),

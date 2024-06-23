@@ -1,78 +1,95 @@
-/*
-  the purpose of this class is to turn each prayer from raw data into an object
-*/
 class Prayer {
-  String prayerCode;
-  String prayerTitle;
-  String prayerCategory;
-  String prayerSubCategory;
-  String prayerDescription;
-  String prayerBody;
-  String prayerAuthor;
-  int prayerWordcount;
-  String prayerFaith;
-  String prayerDateCreated;
-  int prayerResonate;
-  String prayerAnswered;
-  bool prayerRead;
-  List<String> prayerAttachments;
-  List<String> prayerComments;
+  final String prayerCode;
+  final String title;
+  final String category;
+  final String subCategory;
+  final String description;
+  final String body;
+  final String author;
+  final int wordCount;
+  final String faith;
+  final DateTime dateCreated;
+  final bool resonate;
+  final bool answered;
+  final List<String> attachments;
+  final List<String> comments;
 
   Prayer({
     required this.prayerCode,
-    required this.prayerTitle,
-    required this.prayerCategory,
-    required this.prayerSubCategory,
-    required this.prayerDescription,
-    required this.prayerBody,
-    required this.prayerAuthor,
-    required this.prayerWordcount,
-    required this.prayerFaith,
-    required this.prayerDateCreated,
-    required this.prayerResonate,
-    required this.prayerAnswered,
-    required this.prayerAttachments,
-    required this.prayerComments,
-    required this.prayerRead
+    required this.title,
+    required this.category,
+    required this.subCategory,
+    required this.description,
+    required this.body,
+    required this.author,
+    required this.wordCount,
+    required this.faith,
+    required this.dateCreated,
+    required this.resonate,
+    required this.answered,
+    required this.attachments,
+    required this.comments,
   });
+
+  factory Prayer.fromRawText(String rawText, String prayerCode) {
+    final parts = rawText.split('#%*&');
+    return Prayer(
+      prayerCode: prayerCode,
+      title: parts[0],
+      category: parts[1],
+      subCategory: parts[2],
+      description: parts[3],
+      body: parts[4],
+      author: parts[5],
+      wordCount: parts[4].split(' ').length,
+      faith: parts[7],
+      dateCreated: DateTime.parse(parts[6]),
+      resonate: false,
+      answered: false,
+      attachments: [],
+      comments: [],
+    );
+  }
 
   Map<String, dynamic> toMap() {
     return {
       'prayerCode': prayerCode,
-      'prayerTitle': prayerTitle,
-      'prayerCategory': prayerCategory,
-      'prayerSubCategory': prayerSubCategory,
-      'prayerDescription': prayerDescription,
-      'prayerBody': prayerBody,
-      'prayerAuthor': prayerAuthor,
-      'prayerWordcount': prayerWordcount,
-      'prayerFaith': prayerFaith,
-      'prayerDateCreated': prayerDateCreated,
-      'prayerResonate': prayerResonate,
-      'prayerAnswered': prayerAnswered,
-      'prayerAttachments': prayerAttachments,
-      'prayerComments': prayerComments,
-      'prayerRead': prayerRead
+      'title': title,
+      'category': category,
+      'subCategory': subCategory,
+      'description': description,
+      'body': body,
+      'author': author,
+      'wordCount': wordCount,
+      'faith': faith,
+      'dateCreated': dateCreated.toIso8601String(),
+      'resonate': resonate,
+      'answered': answered,
+      'attachments': attachments,
+      'comments': comments,
     };
   }
 
   factory Prayer.fromMap(Map<String, dynamic> map) {
     return Prayer(
       prayerCode: map['prayerCode'],
-      prayerTitle: map['prayerTitle'],
-      prayerCategory: map['prayerCategory'],
-      prayerSubCategory: map['prayerSubCategory'],
-      prayerDescription: map['prayerDescription'],
-      prayerBody: map['prayerBody'],
-      prayerAuthor: map['prayerAuthor'],
-      prayerWordcount: map['prayerWordcount'],
-      prayerFaith: map['prayerFaith'],
-      prayerDateCreated: map['prayerDateCreated'],
-      prayerResonate: map['prayerResonate'],
-      prayerAnswered: map['prayerAnswered'],
-      prayerAttachments: List<String>.from(map['prayerAttachments']),
-      prayerComments: List<String>.from(map['prayerComments']),
-      prayerRead: map['prayerRead']
+      title: map['title'],
+      category: map['category'],
+      subCategory: map['subCategory'],
+      description: map['description'],
+      body: map['body'],
+      author: map['author'],
+      wordCount: map['wordCount'],
+      faith: map['faith'],
+      dateCreated: DateTime.parse(map['dateCreated']),
+      resonate: map['resonate'],
+      answered: map['answered'],
+      attachments: List<String>.from(map['attachments']),
+      comments: List<String>.from(map['comments']),
     );
   }
+
+  Map<String, dynamic> toJson() => toMap();
+
+  factory Prayer.fromJson(Map<String, dynamic> json) => Prayer.fromMap(json);
 }
