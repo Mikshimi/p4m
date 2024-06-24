@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:pray_for_me/src/views/prayers/prayer_view.dart';
 import '../../services/loading_service.dart';
 import '../../global_widgets/p4m_playground/animations/ellipses_animation.dart';
 import '../../global_widgets/p4m_playground/animations/line_animation.dart';
 import '../../global_widgets/p4m_playground/animations/page_transition_1.dart';
 import '../../services/path_provider_service.dart';
+// ignore: unused_import
 import '../home/home_layout_manager.dart';
 
 class SplashView extends StatefulWidget {
@@ -30,7 +33,10 @@ class _SplashViewState extends State<SplashView> {
   }
 
   Future<void> _loadData() async {
-    await _loadingService.loadUserData();
+    // await _loadingService.loadUserData();
+    if (kDebugMode) {
+      print("splash loaded here is the library name: ${widget.libraryName}");
+    }
     await _loadingService.loadPrayerLibrary(widget.libraryName);
     setState(() {
       dataLoaded = true;
@@ -55,10 +61,10 @@ class _SplashViewState extends State<SplashView> {
   void _navigateToHome() {
     Navigator.pushReplacement(
       context,
-      createRouteWithTransition(
-        const HomeLayoutManager(),
-        HomeLayoutManager.routeName,
-      ),
+      createRouteWithTransition(const PrayerView(), PrayerView.routeName
+          // const HomeLayoutManager(),
+          // HomeLayoutManager.routeName,
+          ),
     );
   }
 

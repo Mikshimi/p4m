@@ -25,9 +25,10 @@ class Pray4MeApp extends StatelessWidget {
             future: settingsController.getLibrarySegment(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return CircularProgressIndicator();
+                return const CircularProgressIndicator();
               } else {
-                final libraryName = snapshot.data?['libraryName'] ?? 'defaultLibrary';
+                final libraryName = snapshot.data?['libraryName'] ?? 'p4m_library';
+                // ignore: unused_local_variable
                 final segment = snapshot.data?['segment'] ?? 'short';
 
                 return MaterialApp(

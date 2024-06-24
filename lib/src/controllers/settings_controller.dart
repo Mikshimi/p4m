@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../helpers/app_theme/app_theme.dart';
@@ -42,7 +43,7 @@ class SettingsController with ChangeNotifier {
   // Add getLibrarySegment method
   Future<Map<String, String>> getLibrarySegment() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String libraryName = prefs.getString('libraryName') ?? 'defaultLibrary';
+    String libraryName = prefs.getString('libraryName') ?? 'p4m_library';
     String segment = prefs.getString('segment') ?? 'short';
     return {'libraryName': libraryName, 'segment': segment};
   }

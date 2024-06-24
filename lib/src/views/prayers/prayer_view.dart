@@ -24,18 +24,24 @@ class _PrayerViewState extends State<PrayerView> {
   }
 
   Future<void> _loadPrayers() async {
-    await _loadingService.loadPrayerLibrary('p4m_library', lengthCategory: 'short');
-    final prayers = await _loadingService.storageServiceManager.loadLibrary('p4m_library');
-    setState(() {
-      _prayers = prayers;
-      _selectedPrayer = _prayers.isNotEmpty ? _getRandomPrayer() : 'No prayers available';
-    });
+    await _loadingService.loadPrayerLibrary('p4m_library',
+        lengthCategory: 'short');
+    final prayers =
+        await _loadingService.storageServiceManager.loadLibrary('p4m_library');
+    if (mounted) {
+      setState(() {
+        _prayers = prayers;
+        _selectedPrayer =
+            _prayers.isNotEmpty ? _getRandomPrayer() : 'No prayers available';
+      });
+    }
   }
 
   String _getRandomPrayer() {
     final random = Random();
     final randomIndex = random.nextInt(_prayers.length);
-    return _prayers[randomIndex].body;  // Assuming Prayer class has a 'body' field
+    return _prayers[randomIndex]
+        .body; // Assuming Prayer class has a 'body' field
   }
 
   @override

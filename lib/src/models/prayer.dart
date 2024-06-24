@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Prayer {
   final String prayerCode;
   final String title;
@@ -8,7 +10,7 @@ class Prayer {
   final String author;
   final int wordCount;
   final String faith;
-  final DateTime dateCreated;
+  final String dateCreated;
   final bool resonate;
   final bool answered;
   final List<String> attachments;
@@ -33,6 +35,16 @@ class Prayer {
 
   factory Prayer.fromRawText(String rawText, String prayerCode) {
     final parts = rawText.split('#%*&');
+    if (kDebugMode) {
+      print("title: ${parts[0]}");
+      print("category: ${parts[1]}");
+      print("sub category: ${parts[2]}");
+      print("description: ${parts[3]}");
+      print("body: ${parts[4]}");
+      print("Date Created: ${parts[5]}");
+      print("author: ${parts[6]}");
+      print("faith: ${parts[7]}");
+    }
     return Prayer(
       prayerCode: prayerCode,
       title: parts[0],
@@ -40,10 +52,10 @@ class Prayer {
       subCategory: parts[2],
       description: parts[3],
       body: parts[4],
-      author: parts[5],
+      author: parts[6],
       wordCount: parts[4].split(' ').length,
       faith: parts[7],
-      dateCreated: DateTime.parse(parts[6]),
+      dateCreated: parts[5],
       resonate: false,
       answered: false,
       attachments: [],
@@ -62,7 +74,7 @@ class Prayer {
       'author': author,
       'wordCount': wordCount,
       'faith': faith,
-      'dateCreated': dateCreated.toIso8601String(),
+      'dateCreated': dateCreated,
       'resonate': resonate,
       'answered': answered,
       'attachments': attachments,
@@ -81,7 +93,7 @@ class Prayer {
       author: map['author'],
       wordCount: map['wordCount'],
       faith: map['faith'],
-      dateCreated: DateTime.parse(map['dateCreated']),
+      dateCreated: map['dateCreated'],
       resonate: map['resonate'],
       answered: map['answered'],
       attachments: List<String>.from(map['attachments']),

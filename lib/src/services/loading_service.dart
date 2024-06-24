@@ -1,7 +1,10 @@
+// ignore_for_file: unused_shown_name
+
+// ignore: unused_import
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/foundation.dart' show kDebugMode, kIsWeb;
+import '../app_config.dart';
 import '../models/prayer.dart';
 import 'path_provider_service.dart';
 import 'storage_service_manager.dart';
@@ -17,15 +20,25 @@ class LoadingService {
     // Load user data from shared preferences or other storage
   }
 
-  Future<void> loadPrayerLibrary(String libraryName, {String lengthCategory = 'short'}) async {
+  Future<void> loadPrayerLibrary(String libraryName,
+    {String lengthCategory = 'short'}) async {
+  if (kDebugMode) {
+    print("Loaded Library: $libraryName");
+  }
+  try {
     final path = await pathProviderService.getLibraryPath();
+    if (kDebugMode) {
+      print("Path to Library: $path");
+    }
     String selectedLibrary = libraryName;
-    final seedFilePath = '$path/$selectedLibrary.txt';
+    final seedFilePath = '$path/$selectedLibrary.${AppConfig.libraryExtension}'
+        .replaceAll('\\', '/');
     final seedFile = File(seedFilePath);
 
     if (await seedFile.exists()) {
       final rawText = await seedFile.readAsString();
-      final segments = rawText.split(RegExp(r'\r?\n(short|medium|long)\r?\n'));
+      final segments =
+          rawText.split(RegExp(r'\r?\n(short|medium|long)\r?\n'));
       final prayers = <Prayer>[];
 
       int categoryIndex = ['short', 'medium', 'long'].indexOf(lengthCategory);
@@ -47,7 +60,14 @@ class LoadingService {
     } else {
       throw Exception('Library seed file not found');
     }
+  } on Exception catch (e) {
+    if (kDebugMode) {
+      print("Error: $e");
+    }
+    // Optionally, show an error message to the user or handle the error gracefully
   }
+}
+
 
   String generatePrayerCode(List<String> parts) {
     final category = parts[1].substring(0, 3);

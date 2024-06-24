@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:msgpack_dart/msgpack_dart.dart';
+import '../app_config.dart';
 import 'path_provider_service.dart';
 import '../models/prayer.dart';
 
@@ -13,12 +14,15 @@ class StorageServiceManager {
 
   Future<void> saveLibrary(List<Prayer> prayers, String libraryName) async {
     final path = await pathProviderService.getLibraryPath();
-    final filePath = '$path/$libraryName.${kIsWeb ? 'json' : 'msgpack'}';
+    // ignore: prefer_const_declarations
+    final extension =
+        kIsWeb ? AppConfig.webExtension : AppConfig.mobileExtension;
+    final filePath = '$path/$libraryName.$extension'.replaceAll('\\', '/');
 
     if (kIsWeb) {
+      final prefs = await SharedPreferences.getInstance();
       final jsonString = jsonEncode(prayers.map((p) => p.toJson()).toList());
-      final file = File(filePath);
-      await file.writeAsString(jsonString);
+      await prefs.setString(filePath, jsonString);
     } else {
       final bytes = serialize(prayers.map((p) => p.toMap()).toList());
       final file = File(filePath);
@@ -28,21 +32,34 @@ class StorageServiceManager {
 
   Future<List<Prayer>> loadLibrary(String libraryName) async {
     final path = await pathProviderService.getLibraryPath();
-    final filePath = '$path/$libraryName.${kIsWeb ? 'json' : 'msgpack'}';
-    final file = File(filePath);
+    // ignore: prefer_const_declarations
+    final extension =
+        kIsWeb ? AppConfig.webExtension : AppConfig.mobileExtension;
+    final filePath = '$path/$libraryName.$extension'.replaceAll('\\', '/');
 
-    if (await file.exists()) {
-      if (kIsWeb) {
-        final jsonString = await file.readAsString();
+    if (kIsWeb) {
+      final prefs = await SharedPreferences.getInstance();
+      if (prefs.containsKey(filePath)) {
+        final jsonString = prefs.getString(filePath)!;
         final List<dynamic> jsonList = jsonDecode(jsonString);
         return jsonList.map((json) => Prayer.fromJson(json)).toList();
       } else {
-        final bytes = await file.readAsBytes();
-        final List<dynamic> dataList = deserialize(bytes);
-        return dataList.map((data) => Prayer.fromMap(data)).toList();
+        throw Exception('Library not found');
       }
     } else {
-      throw Exception('Library not found');
+      final file = File(filePath);
+      if (await file.exists()) {
+        final bytes = await file.readAsBytes();
+        final List<dynamic> dataList = deserialize(bytes);
+        return dataList.map((data) {
+          // Convert Map<dynamic, dynamic> to Map<String, dynamic>
+          final convertedMap = (data as Map)
+              .map((key, value) => MapEntry(key.toString(), value));
+          return Prayer.fromMap(convertedMap);
+        }).toList();
+      } else {
+        throw Exception('Library not found');
+      }
     }
   }
 }
