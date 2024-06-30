@@ -1,12 +1,8 @@
-Topic: Prayers. (there are creative ways to obtain the data for it.)
-Prayer Bodies: Short (less than 50 words), medium (between 50 and 100 words), long (over 100 words)
-> Cover as many sub categories as we can.
-Here is a Json file depicting Categories and sub categories for the topic selected for this project: 
 '{
     "prayer_Categories": [
       {
         "relationships": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Family harmony",
             "Friendship",
             "Love",
@@ -20,7 +16,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "creativity": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Inspiration",
             "Innovation",
             "Artistic expression",
@@ -34,14 +30,15 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "technocratic_ideals": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Sustainable Development",
             "Ethical AI Integration",
-            "Global Connectivity"
+            "Global Connectivity",
+	    "Scientific Advancement and Exploration",
           ]
         },
         "spiritual_needs": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Guidance",
             "Strength",
             "Faith",
@@ -55,7 +52,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "health": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Healing from illnesses",
             "Recovery from surgeries",
             "Physical well-being",
@@ -68,7 +65,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "financial_stability": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Employment",
             "Debt relief",
             "Prosperity",
@@ -82,7 +79,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "protection": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Safety",
             "Security",
             "Defense against harm",
@@ -96,7 +93,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "gratitude": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Thankfulness for blessings",
             "Appreciation for people",
             "Recognition of opportunities",
@@ -110,7 +107,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "personal_growth": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Self-improvement",
             "Overcoming weaknesses",
             "Development of talents",
@@ -124,7 +121,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "world_events": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Peace",
             "Justice",
             "Relief from natural disasters",
@@ -138,7 +135,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "direction_and_decisions": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Clarity",
             "Guidance in choices",
             "Discernment",
@@ -152,7 +149,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "comfort_and_support": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Comfort in grief",
             "Strength in adversity",
             "Encouragement in trials",
@@ -166,7 +163,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "fulfillment_and_victory": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Satisfaction in life",
             "Fulfillment in purpose",
             "Contentment with what one has",
@@ -179,7 +176,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "redemption": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Forgiveness of sins",
             "Release from guilt",
             "Restoration of brokenness",
@@ -193,7 +190,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "education_and_knowledge": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Learning opportunities",
             "Intellectual growth",
             "Wisdom",
@@ -207,7 +204,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "restoration_and_renewal": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Renewed strength",
             "Restoration of joy",
             "Revival of hope",
@@ -221,7 +218,7 @@ Here is a Json file depicting Categories and sub categories for the topic select
           ]
         },
         "justice_and_equity": {
-          "prayer_sub_Catagory": [
+          "prayer_sub_Category": [
             "Fairness",
             "Equality",
             "Advocacy for justice",
@@ -237,14 +234,4 @@ Here is a Json file depicting Categories and sub categories for the topic select
       }
     ]
   }
-  '
-
-Rules for output text file: 
-1: use split symbol '#' between each item within a prayer
-2: each prayer is on its own line. 
-3: order is as follows >'prayer_Title#prayer_Catagory#prayer_sub_Catagory#prayer_Description#prayer_Body#prayer_Author#prayer_Date_Created#prayer_Faith'
-
-Raw text Form
-Examples of rule implementation below:
-
-'Innovation in Technology'#'Technocratic Ideals'#'Ethical AI'#'A prayer for inspiration and breakthroughs in technology.'#'Lord, grant us the wisdom and creativity to innovate and develop technologies that improve lives and advance humanity. May our work in technology be guided by integrity and a desire to serve the greater good.'#'2024-06-13'#'Zara Z'#'Non-denominational'
+  ' 

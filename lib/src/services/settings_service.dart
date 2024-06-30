@@ -37,22 +37,6 @@ class SettingsService {
     }
   }
 
-  /*
-  Next part here <file storage Manager>
-  */
-  Future<void> saveLibrarySegment(String libraryName, String segment) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('selectedLibrary', libraryName);
-    await prefs.setString('selectedSegment', segment);
-  }
-
-  Future<Map<String, String>> getLibrarySegment() async {
-    final prefs = await SharedPreferences.getInstance();
-    final libraryName = prefs.getString('selectedLibrary') ?? 'defaultLibrary';
-    final segment = prefs.getString('selectedSegment') ?? 'short';
-    return {'libraryName': libraryName, 'segment': segment};
-  }
-
   Future<void> clearAllPreferences() async {
     SharedPreferences allPrefs = await SharedPreferences.getInstance();
     await allPrefs.clear();

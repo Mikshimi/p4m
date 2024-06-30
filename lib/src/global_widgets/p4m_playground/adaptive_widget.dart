@@ -39,7 +39,7 @@ class AdaptiveWidget extends StatelessWidget {
             Text(
               'Hello, Large Screen!',
               style: TextStyle(
-                fontSize: Dimensions.prayerTextFontSizeMedium,
+                // fontSize: Dimensions.prayerTextFontSizeMedium,
               ),
             ),
             SizedBox(width: Dimensions.p4mHorizontalSpaceSmall.width),

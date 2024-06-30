@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import '../../services/loading_service.dart';
 import '../../models/prayer.dart';
-import '../../services/path_provider_service.dart';
+// import '../../services/path_provider_service.dart';
 
 class PrayerView extends StatefulWidget {
   const PrayerView({super.key});
@@ -13,7 +13,7 @@ class PrayerView extends StatefulWidget {
 }
 
 class _PrayerViewState extends State<PrayerView> {
-  final LoadingService _loadingService = LoadingService(PathProviderService());
+  final LoadingService _loadingService = LoadingService();
   List<Prayer> _prayers = [];
   String _selectedPrayer = '';
 
@@ -24,10 +24,10 @@ class _PrayerViewState extends State<PrayerView> {
   }
 
   Future<void> _loadPrayers() async {
-    await _loadingService.loadPrayerLibrary('p4m_library',
-        lengthCategory: 'short');
+    await _loadingService.loadPrayerLibrary('p4m_library_seed',
+         'short');
     final prayers =
-        await _loadingService.storageServiceManager.loadLibrary('p4m_library');
+        await _loadingService.loadPrayerLibrary('p4m_library_seed','short');
     if (mounted) {
       setState(() {
         _prayers = prayers;

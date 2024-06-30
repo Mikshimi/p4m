@@ -1,0 +1,236 @@
+{
+  "prayer_Categories": [
+    {
+      "relationships": {
+        "prayer_sub_Category": [
+          "Family harmony",
+          "Friendship",
+          "Love",
+          "Reconciliation",
+          "Unity",
+          "Healing broken relationships",
+          "Strengthening bonds",
+          "Guidance in relationships",
+          "Protection for loved ones",
+          "Restoration of trust"
+        ]
+      },
+      "creativity": {
+        "prayer_sub_Category": [
+          "Inspiration",
+          "Innovation",
+          "Artistic expression",
+          "Creative solutions",
+          "Fulfillment in creative pursuits",
+          "Expansion of imagination",
+          "Development of talents",
+          "Sharing creative gifts",
+          "Expression of uniqueness",
+          "Impact through creativity"
+        ]
+      },
+      "technocratic_ideals": {
+        "prayer_sub_Category": [
+          "Sustainable Development",
+          "Ethical AI Integration",
+          "Global Connectivity",
+          "Scientific Advancement and Exploration"
+        ]
+      },
+      "spiritual_needs": {
+        "prayer_sub_Category": [
+          "Guidance",
+          "Strength",
+          "Faith",
+          "Forgiveness",
+          "Wisdom",
+          "Salvation",
+          "Holiness",
+          "Connection with the Divine",
+          "Spiritual growth",
+          "Inner peace"
+        ]
+      },
+      "health": {
+        "prayer_sub_Category": [
+          "Healing from illnesses",
+          "Recovery from surgeries",
+          "Physical well-being",
+          "Mental health",
+          "Longevity",
+          "Relief from pain",
+          "Wellness for loved ones",
+          "Strength during health challenges",
+          "Access to healthcare"
+        ]
+      },
+      "financial_stability": {
+        "prayer_sub_Category": [
+          "Employment",
+          "Debt relief",
+          "Prosperity",
+          "Financial wisdom",
+          "Business success",
+          "Provision of basic needs",
+          "Generosity",
+          "Stewardship",
+          "Abundance",
+          "Opportunities for growth"
+        ]
+      },
+      "protection": {
+        "prayer_sub_Category": [
+          "Safety",
+          "Security",
+          "Defense against harm",
+          "Shielding from danger",
+          "Traveling mercies",
+          "Protection for communities",
+          "Safety for children",
+          "Preservation of property",
+          "Safety in natural disasters",
+          "Guidance in making safe choices"
+        ]
+      },
+      "gratitude": {
+        "prayer_sub_Category": [
+          "Thankfulness for blessings",
+          "Appreciation for people",
+          "Recognition of opportunities",
+          "Contentment",
+          "Acknowledgment of answered prayers",
+          "Gratefulness for lessons learned",
+          "Joy in everyday life",
+          "Gratitude for nature",
+          "Thankfulness for provision",
+          "Gratitude for spiritual blessings"
+        ]
+      },
+      "personal_growth": {
+        "prayer_sub_Category": [
+          "Self-improvement",
+          "Overcoming weaknesses",
+          "Development of talents",
+          "Education",
+          "Character refinement",
+          "Confidence",
+          "Patience",
+          "Humility",
+          "Courage",
+          "Discipline"
+        ]
+      },
+      "world_events": {
+        "prayer_sub_Category": [
+          "Peace",
+          "Justice",
+          "Relief from natural disasters",
+          "End to conflicts",
+          "Unity among nations",
+          "Healing for the environment",
+          "Protection for vulnerable populations",
+          "Prosperity for all",
+          "Wisdom for leaders",
+          "Compassion in global decisions"
+        ]
+      },
+      "direction_and_decisions": {
+        "prayer_sub_Category": [
+          "Clarity",
+          "Guidance in choices",
+          "Discernment",
+          "Wisdom in decision-making",
+          "Understanding of purpose",
+          "Direction in career paths",
+          "Guidance in major life decisions",
+          "Insight in relationships",
+          "Trust in divine timing",
+          "Assurance in uncertain times"
+        ]
+      },
+      "comfort_and_support": {
+        "prayer_sub_Category": [
+          "Comfort in grief",
+          "Strength in adversity",
+          "Encouragement in trials",
+          "Support during challenges",
+          "Solace in times of loss",
+          "Compassion for those suffering",
+          "Empathy in times of need",
+          "Community support",
+          "Encouragement for the weary",
+          "Presence of loved ones"
+        ]
+      },
+      "fulfillment_and_victory": {
+        "prayer_sub_Category": [
+          "Satisfaction in life",
+          "Fulfillment in purpose",
+          "Contentment with what one has",
+          "Joy in achievements",
+          "Satisfaction in relationships",
+          "Happiness in daily life",
+          "Peace in one's heart",
+          "Enjoyment of simple pleasures",
+          "Gratitude for life experiences"
+        ]
+      },
+      "redemption": {
+        "prayer_sub_Category": [
+          "Forgiveness of sins",
+          "Release from guilt",
+          "Restoration of brokenness",
+          "Renewal of spirit",
+          "Healing from past hurts",
+          "Freedom from addictions",
+          "Transformation of character",
+          "Redemption of mistakes",
+          "Reconciliation with God",
+          "Liberation from bondage"
+        ]
+      },
+      "education_and_knowledge": {
+        "prayer_sub_Category": [
+          "Learning opportunities",
+          "Intellectual growth",
+          "Wisdom",
+          "Understanding",
+          "Academic success",
+          "Access to education",
+          "Clarity of thought",
+          "Knowledge to help others",
+          "Skills development",
+          "Lifelong learning"
+        ]
+      },
+      "restoration_and_renewal": {
+        "prayer_sub_Category": [
+          "Renewed strength",
+          "Restoration of joy",
+          "Revival of hope",
+          "Healing of brokenness",
+          "Rejuvenation of spirit",
+          "Refreshment of soul",
+          "Transformation of circumstances",
+          "Revitalization of relationships",
+          "Rebirth of dreams",
+          "Rebuilding of what was lost"
+        ]
+      },
+      "justice_and_equity": {
+        "prayer_sub_Category": [
+          "Fairness",
+          "Equality",
+          "Advocacy for justice",
+          "Protection of rights",
+          "Accountability",
+          "Restoration of balance",
+          "Empowerment of the marginalized",
+          "Social justice",
+          "Compassion for the oppressed",
+          "Integrity in governance"
+        ]
+      }
+    }
+  ]
+}

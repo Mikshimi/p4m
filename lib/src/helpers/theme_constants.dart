@@ -57,14 +57,12 @@ String stripPaths(pathFileName) {
 
 ThemeData themeChange(varriantChoice) {
   final Map allThemes = <String, ThemeData>{
-    'classicLight': P4MThemes.p4MClassicLightTheme,
-    'classicDark': P4MThemes.p4MClassicdarkTheme,
-    'summer': P4MThemes.summerTheme,
-    'autumn': P4MThemes.autumnTheme,
-    'dusk': P4MThemes.duskTheme,
-    'winter': P4MThemes.winterTheme,
-    'midnight': P4MThemes.midnightTheme,
-    'cloud9': P4MThemes.cloud9Theme,
+    'America': P4MThemes.p4MAmericaTheme,
+    'Delux': P4MThemes.p4MDeluxTheme,
+    'The_Ocean': P4MThemes.p4MOceanTheme,
+    'Natures_Call': P4MThemes.p4MNatureTheme,
+    'Whisper': P4MThemes.p4MLispTheme,
+    'Authors_Notes': P4MThemes.p4MAuthorTheme,
   };
 
   return allThemes[varriantChoice];

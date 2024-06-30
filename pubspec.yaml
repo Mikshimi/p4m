@@ -21,20 +21,12 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.5.0-180.3.beta <4.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   shared_preferences: ^2.0.15
   flutter_screenutil: ^5.9.3
@@ -59,22 +51,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^4.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   generate: true
@@ -93,7 +73,6 @@ flutter:
     - assets/images/ui/
     - assets/images/language/
     - assets/images/user_images/profile/
-    - assets/p4m_library.txt
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -112,20 +91,47 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-  - family: Roboto
-    fonts:
-      - asset: assets/fonts/Roboto/Roboto-Thin.ttf
-      - asset: assets/fonts/Roboto/Roboto-ThinItalic.ttf
-      - asset: assets/fonts/Roboto/Roboto-Regular.ttf
-      - asset: assets/fonts/Roboto/Roboto-Medium.ttf
-      - asset: assets/fonts/Roboto/Roboto-MediumItalic.ttf
-      - asset: assets/fonts/Roboto/Roboto-Light.ttf   
-      - asset: assets/fonts/Roboto/Roboto-LightItalic.ttf
-      - asset: assets/fonts/Roboto/Roboto-Italic.ttf
-      - asset: assets/fonts/Roboto/Roboto-Bold.ttf
-      - asset: assets/fonts/Roboto/Roboto-BoldItalic.ttf
-      - asset: assets/fonts/Roboto/Roboto-Black.ttf 
-      - asset: assets/fonts/Roboto/Roboto-BlackItalic.ttf 
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Thin.ttf
+        - asset: assets/fonts/Roboto/Roboto-ThinItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto/Roboto-MediumItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Light.ttf   
+        - asset: assets/fonts/Roboto/Roboto-LightItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Italic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+        - asset: assets/fonts/Roboto/Roboto-BoldItalic.ttf
+        - asset: assets/fonts/Roboto/Roboto-Black.ttf 
+        - asset: assets/fonts/Roboto/Roboto-BlackItalic.ttf 
+        
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
+    
+    - family: Product_Sans
+      fonts:
+        - asset: assets/fonts/ProductSans/ProductSans-Thin.ttf
+        - asset: assets/fonts/ProductSans/ProductSans-Light.ttf
+        - asset: assets/fonts/ProductSans/ProductSans-Regular.ttf
+        - asset: assets/fonts/ProductSans/ProductSans-Medium.ttf
+        - asset: assets/fonts/ProductSans/ProductSans-Bold.ttf
+        - asset: assets/fonts/ProductSans/ProductSans-Black.ttf
+
+    - family: Aviner_Medium
+      fonts:
+        - asset: assets/fonts/Avenir/Avenir_Medium.ttf
+          weight: 400
+
+    - family: Material_Icons
+      fonts:
+        - asset: assets/icons/MaterialIcons/MaterialIcons-Regular.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -33,7 +33,7 @@ class ResponsiveWidget extends StatelessWidget {
           Text(
             'Hello, Portrait!',
             style: TextStyle(
-              fontSize: Dimensions.prayerTextFontSizeMedium,
+              // fontSize: Dimensions.prayerTextFontSizeMedium,
             ),
           ),
           SizedBox(height: Dimensions.p4mVerticalSpaceSmall.height),
@@ -60,7 +60,7 @@ class ResponsiveWidget extends StatelessWidget {
           Text(
             'Hello, Landscape!',
             style: TextStyle(
-              fontSize: Dimensions.prayerTextFontSizeMedium,
+              // fontSize: Dimensions.prayerTextFontSizeMedium,
             ),
           ),
           SizedBox(width: Dimensions.p4mHorizontalSpaceSmall.width),

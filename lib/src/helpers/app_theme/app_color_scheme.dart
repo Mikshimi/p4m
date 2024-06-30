@@ -1,32 +1,40 @@
 part of 'app_theme.dart';
 
-// @immutable
 class _P4MColorScheme {
-  static const _p4MLightColorScheme = ColorScheme(
-    brightness: Brightness.light,
-    primary: _P4MColors.deepTeal,
-    onPrimary: Colors.white,
-    secondary: _P4MColors.deepYellow,
-    onSecondary: Colors.black,
-    tertiaryContainer: _P4MColors.deepSilver,
-    onTertiaryContainer: _P4MColors.white,
-    error: Colors.red,
-    onError: _P4MColors.white,
-    surface: Colors.white,
-    onSurface: Colors.black,
-  );
+  //Light Color Schemes
+  static ColorScheme p4MAmericaColorScheme = ColorScheme.fromSeed(
+      seedColor: P4MColors.americaLight.elementAt(4),
+      brightness: Brightness.light,
+      primary: P4MColors.americaNavyD,
+      secondary: P4MColors.americaWhiteL,
+      tertiary: P4MColors.americaRedD,
+      );
 
-  static const _p4MDarkColorScheme = ColorScheme(
-    brightness: Brightness.dark,
-    primary: _P4MColors.deepTeal,
-    onPrimary: Colors.black,
-    secondary: _P4MColors.deepYellow,
-    onSecondary: Colors.white,
-    tertiaryContainer: _P4MColors.deepSilver,
-    onTertiaryContainer: _P4MColors.black,
-    error: Colors.redAccent,
-    onError: Colors.black,
-    surface: Colors.black,
-    onSurface: Colors.white,
-  );
+  static ColorScheme p4MDeluxColorScheme = ColorScheme.fromSeed(
+      seedColor: P4MColors.deluxLight.elementAt(0),
+      brightness: Brightness.light,
+      primary: P4MColors.deluxLightBlueL,
+      secondary: P4MColors.deluxPerperPinkL,
+      tertiary: P4MColors.deluxHeavyPinkL);
+
+  static ColorScheme p4MLispColorScheme = ColorScheme.fromSeed(
+      seedColor: P4MColors.lispLight.elementAt(0),
+      brightness: Brightness.light,
+      primary: P4MColors.lispBlackD,
+      secondary: P4MColors.lispRedishD,
+      tertiary: P4MColors.lispOffGreyD);
+
+  //Dark Color Schemes
+  static ColorScheme p4MOceanColorScheme = ColorScheme.fromSeed(
+      seedColor: P4MColors.oceanDark.elementAt(0),
+      brightness: Brightness.dark,
+      primary: P4MColors.oceanDeepBlueD,
+      secondary: P4MColors.oceanShoreBlueD,
+      tertiary: P4MColors.lispRedishD);
+  static ColorScheme p4MNatureColorScheme = ColorScheme.fromSeed(
+      seedColor: P4MColors.natureDark.elementAt(0),
+      brightness: Brightness.dark);
+  static ColorScheme p4MAuthorColorScheme = ColorScheme.fromSeed(
+      seedColor: P4MColors.authorDark.elementAt(1),
+      brightness: Brightness.dark);
 }

@@ -2,24 +2,26 @@
     "user_prayer_data":
     {
         "prayers_recent":[
-
         ],
     
-        "prayers_pinned":[
-            
+        "prayers_pinned":[            
         ],
-        "prayer_Categories":[
-            
-        ],
-
         "my_journey":{
             "prayers_read_completely":[],
             "prayers_resonated":[],
             "prayers_answered":[],
-            "prayers_favored":[],
-            "total_time_spent_reading":0 
+            "prayers_favored":[]
         }
-    }
-    
-    
+    },
+    "user_settings_data":
+    {
+        "user_theme":"",
+        "user_prayer_font_size":14,
+        "user_font_style":"",
+        "user_library_selection_name":"",
+        "user_creations":{
+            "prayers_created":[],
+            "prayers_projects":[]
+        }
+    }   
 }

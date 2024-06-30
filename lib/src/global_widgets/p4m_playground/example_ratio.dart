@@ -22,7 +22,7 @@ class ExampleWidget extends StatelessWidget {
             Text(
               'Hello, World!',
               style: TextStyle(
-                fontSize: Dimensions.prayerTextFontSizeMedium,
+                // fontSize: Dimensions.prayerTextFontSizeMedium,
               ),
             ),
             SizedBox(height: Dimensions.p4mVerticalSpaceSmall.height),

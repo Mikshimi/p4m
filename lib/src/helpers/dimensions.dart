@@ -83,9 +83,18 @@ class Dimensions {
   static final p4mScreenWidth60 = 0.6.sw;
 
   //P4M  Text font size
-  static final double prayerTextFontSizeLarge = 24.sp;
-  static final double prayerTextFontSizeMedium = 20.sp;
-  static final double prayerTextFontSizeSmall = 16.sp;
+  static final double prayerTextFontSize32 = 32.sp;
+  static final double prayerTextFontSize28 = 28.sp;
+  static final double prayerTextFontSize26 = 26.sp;
+  static final double prayerTextFontSize24 = 24.sp;
+  static final double prayerTextFontSize20 = 20.sp;
+  static final double prayerTextFontSize18 = 18.sp;
+  static final double prayerTextFontSize16 = 16.sp;
+  static final double prayerTextFontSize14 = 14.sp;
+  static final double prayerTextFontSize12 = 12.sp;
+  static final double prayerTextFontSize10 = 10.sp;
+
+
 
   //P4M letter Spacing
   static final double prayerTextLetterSpacingLarge = 10.w;

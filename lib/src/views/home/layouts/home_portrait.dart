@@ -1,8 +1,4 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/material.dart';
-
-import '../../../helpers/dimensions.dart';
-import '../../../helpers/theme_constants.dart';
+part of '../home_layout_manager.dart';
 
 class HomePortrait extends StatefulWidget {
   const HomePortrait({

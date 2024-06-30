@@ -1,4 +1,29 @@
-import 'dart:convert';
+// import 'dart:convert';
+// // import 'package:flutter/foundation.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+// // import '../app_config.dart';
+// import '../models/prayer.dart';
+
+// class StorageServiceManager {
+//   Future<void> saveLibrary(List<Prayer> prayers, String libraryName) async {
+//     final prefs = await SharedPreferences.getInstance();
+//     final jsonString = jsonEncode(prayers.map((p) => p.toJson()).toList());
+//     await prefs.setString(libraryName, jsonString);
+//   }
+
+//   Future<List<Prayer>> loadLibrary(String libraryName) async {
+//     final prefs = await SharedPreferences.getInstance();
+//     if (prefs.containsKey(libraryName)) {
+//       final jsonString = prefs.getString(libraryName)!;
+//       final List<dynamic> jsonList = jsonDecode(jsonString);
+//       return jsonList.map((json) => Prayer.fromJson(json)).toList();
+//     } else {
+//       throw Exception('Library not found');
+//     }
+//   }
+// }
+
+/*import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -63,3 +88,4 @@ class StorageServiceManager {
     }
   }
 }
+*/

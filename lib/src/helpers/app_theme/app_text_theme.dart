@@ -1,179 +1,181 @@
-// part of 'app_theme.dart';
+part of 'app_theme.dart';
 
-// @immutable
-// class _TextTheme {
-//   static final _textLightTheme = TextTheme(
-//     ///DISPLAY
-//     displayLarge: TextStyle(
-//       fontSize: 32.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     displayMedium: TextStyle(
-//       fontSize: 28.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     displaySmall: TextStyle(
-//       fontSize: 26.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
+// ignore: unused_element
+class _TextTheme {
+  // ignore: unused_field
+  static final _textLightTheme = TextTheme(
+    ///DISPLAY
+    displayLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize32,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
+    displayMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize28,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
+    displaySmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize26,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
 
-//     //HEADLINE
-//     headlineLarge: TextStyle(
-//       fontSize: 24.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     headlineMedium: TextStyle(
-//       fontSize: 20.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     headlineSmall: TextStyle(
-//       fontSize: 18.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
+    //HEADLINE
+    headlineLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize24,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize20,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
+    headlineSmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize18,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
 
-//     //TITLE
-//     titleLarge: TextStyle(
-//       fontSize: 16.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     titleMedium: TextStyle(
-//       fontSize: 14.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     titleSmall: TextStyle(
-//       fontSize: 12.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.deepSilver,
-//     ),
+    //TITLE
+    titleLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize16,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
+    titleMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize14,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
+    titleSmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize12,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaNavyD,
+    ),
 
-//     //BODY
-//     bodyLarge: TextStyle(
-//       fontSize: 20.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     bodyMedium: TextStyle(
-//       fontSize: 18.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     bodySmall: TextStyle(
-//       fontSize: 16.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.deepSilver,
-//     ),
+    //BODY
+    bodyLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize20,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaNavyD,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize18,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaNavyD,
+    ),
+    bodySmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize16,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaNavyD,
+    ),
 
-//     //LABEL
-//     labelLarge: TextStyle(
-//       fontSize: 14.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     labelMedium: TextStyle(
-//       fontSize: 12.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.deepSilver,
-//     ),
-//     labelSmall: TextStyle(
-//       fontSize: 10.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.deepSilver,
-//     ),
-//   );
+    //LABEL
+    labelLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize14,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaNavyD,
+    ),
+    labelMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize12,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaNavyD,
+    ),
+    labelSmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize10,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaNavyD,
+    ),
+  );
 
-//   //DARK MODE
-//   static final _textDarkTheme = TextTheme(
-//     ///DISPLAY
-//     displayLarge: TextStyle(
-//       fontSize: 32.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
-//     displayMedium: TextStyle(
-//       fontSize: 28.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
-//     displaySmall: TextStyle(
-//       fontSize: 26.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
+  //DARK MODE
+  // ignore: unused_field
+  static final _textDarkTheme = TextTheme(
+    ///DISPLAY
+    displayLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize32,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
+    displayMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize28,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
+    displaySmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize26,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
 
-//     //HEADLINE
-//     headlineLarge: TextStyle(
-//       fontSize: 24.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
-//     headlineMedium: TextStyle(
-//       fontSize: 20.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
-//     headlineSmall: TextStyle(
-//       fontSize: 18.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
+    //HEADLINE
+    headlineLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize24,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize20,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
+    headlineSmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize18,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
 
-//     //TITLE
-//     titleLarge: TextStyle(
-//       fontSize: 16.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
-//     titleMedium: TextStyle(
-//       fontSize: 14.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
-//     titleSmall: TextStyle(
-//       fontSize: 12.sp,
-//       fontWeight: FontWeight.w700,
-//       color: _P4MColors.white,
-//     ),
+    //TITLE
+    titleLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize16,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
+    titleMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize14,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
+    titleSmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize12,
+      fontWeight: FontWeight.w700,
+      color: P4MColors.americaWhiteL,
+    ),
 
-//     //BODY
-//     bodyLarge: TextStyle(
-//       fontSize: 20.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.white,
-//     ),
-//     bodyMedium: TextStyle(
-//       fontSize: 18.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.white,
-//     ),
-//     bodySmall: TextStyle(
-//       fontSize: 16.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.white,
-//     ),
+    //BODY
+    bodyLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize20,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaWhiteL,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize18,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaWhiteL,
+    ),
+    bodySmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize16,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaWhiteL,
+    ),
 
-//     //LABEL
-//     labelLarge: TextStyle(
-//       fontSize: 14.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.white,
-//     ),
-//     labelMedium: TextStyle(
-//       fontSize: 12.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.white,
-//     ),
-//     labelSmall: TextStyle(
-//       fontSize: 10.sp,
-//       fontWeight: FontWeight.w400,
-//       color: _P4MColors.white,
-//     ),
-//   );
-// }
+    //LABEL
+    labelLarge: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize14,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaWhiteL,
+    ),
+    labelMedium: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize12,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaWhiteL,
+    ),
+    labelSmall: TextStyle(
+      fontSize: Dimensions.prayerTextFontSize10,
+      fontWeight: FontWeight.w400,
+      color: P4MColors.americaWhiteL,
+    ),
+  );
+}

@@ -1,75 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:pray_for_me/src/helpers/dimensions.dart';
 part 'app_bar_theme.dart';
 part 'app_color_scheme.dart';
 part 'app_colors.dart';
+part 'app_text_theme.dart';
 
 @immutable
 class P4MThemes {
-  static final p4MClassicLightTheme = ThemeData(
+  static final p4MAmericaTheme = ThemeData(
     useMaterial3: true,
-    brightness: Brightness.light,
-    colorScheme: _P4MColorScheme._p4MLightColorScheme,
+    colorScheme: _P4MColorScheme.p4MAmericaColorScheme,
     // textTheme: _TextTheme._textLightTheme,
     fontFamily: "Roboto",
-    appBarTheme: _AppBarTheme._appBarLightTheme,
-    scaffoldBackgroundColor: _P4MColorScheme._p4MLightColorScheme.surface,
+    appBarTheme: _AppBarTheme._appBarAmerica,
+    scaffoldBackgroundColor: _P4MColorScheme.p4MAmericaColorScheme.surface,
   );
 
-  static final p4MClassicdarkTheme = ThemeData(
+  static final p4MDeluxTheme = ThemeData(
     useMaterial3: true,
-    brightness: Brightness.dark,
-    colorScheme: _P4MColorScheme._p4MDarkColorScheme,
+    colorScheme: _P4MColorScheme.p4MDeluxColorScheme,
     // textTheme: _TextTheme._textDarkTheme,
     fontFamily: "Roboto",
-    appBarTheme: _AppBarTheme._appBarDarkTheme,
-    scaffoldBackgroundColor: _P4MColorScheme._p4MDarkColorScheme.surface,
+    appBarTheme: _AppBarTheme._appBarDelux,
+    scaffoldBackgroundColor: _P4MColorScheme.p4MDeluxColorScheme.surface,
   );
-
-  static final cloud9Theme = ThemeData(
+  static final p4MOceanTheme = ThemeData(
     useMaterial3: true,
-    brightness: Brightness.light,
-    colorSchemeSeed: _P4MColors.lightBlue,
+    colorScheme: _P4MColorScheme.p4MOceanColorScheme,
     // textTheme: _TextTheme._textLightTheme,
     fontFamily: "Roboto",
+    appBarTheme: _AppBarTheme._appBarOcean,
+    scaffoldBackgroundColor: _P4MColorScheme.p4MAmericaColorScheme.surface,
   );
 
-  static final summerTheme = ThemeData(
+  static final p4MNatureTheme = ThemeData(
     useMaterial3: true,
-    brightness: Brightness.light,
-    colorSchemeSeed: _P4MColors.deepYellow,
+    colorScheme: _P4MColorScheme.p4MNatureColorScheme,
+    // textTheme: _TextTheme._textDarkTheme,
+    fontFamily: "Roboto",
+    appBarTheme: _AppBarTheme._appBarNature,
+    scaffoldBackgroundColor: _P4MColorScheme.p4MDeluxColorScheme.surface,
+  );
+  static final p4MLispTheme = ThemeData(
+    useMaterial3: true,
+    colorScheme: _P4MColorScheme.p4MLispColorScheme,
     // textTheme: _TextTheme._textLightTheme,
     fontFamily: "Roboto",
+    appBarTheme: _AppBarTheme._appBarLisp,
+    scaffoldBackgroundColor: _P4MColorScheme.p4MAmericaColorScheme.surface,
   );
 
-  static final autumnTheme = ThemeData(
+  static final p4MAuthorTheme = ThemeData(
     useMaterial3: true,
-    brightness: Brightness.light,
-    colorSchemeSeed: _P4MColors.deepBrown,
-    // textTheme: _TextTheme._textLightTheme,
-    fontFamily: "Roboto",
-  );
-
-  static final duskTheme = ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark,
-    colorSchemeSeed: _P4MColors.brightRed,
+    colorScheme: _P4MColorScheme.p4MAuthorColorScheme,
     // textTheme: _TextTheme._textDarkTheme,
     fontFamily: "Roboto",
-  );
-
-  static final midnightTheme = ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark,
-    colorSchemeSeed: const Color.fromARGB(255, 12, 28, 32),
-    // textTheme: _TextTheme._textDarkTheme,
-    fontFamily: "Roboto",
-  );
-
-  static final winterTheme = ThemeData(
-    useMaterial3: true,
-    brightness: Brightness.dark,
-    colorSchemeSeed: _P4MColors.deepTeal,
-    // textTheme: _TextTheme._textDarkTheme,
-    fontFamily: "Roboto",
+    appBarTheme: _AppBarTheme._appBarAuthor,
+    scaffoldBackgroundColor: _P4MColorScheme.p4MDeluxColorScheme.surface,
   );
 }

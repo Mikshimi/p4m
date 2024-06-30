@@ -22,9 +22,8 @@ class AlertService {
         Warning: usecase example, when the user tries to upload their
         own background images, if the image file exceeds lets say 20mb, then 
         a warning alert will be displayed warning about.
-        Error: when task cannot be completed () 
-        lastly a date time stamp would be issued as to when the notification
-        pops up and it disappears either after an elapsed time of say 5 seconds, 
+        Error: when task cannot be completed. 
+        it disappears either after an elapsed time of say 5 seconds, 
         user's gesture swipes the notification right/left or clicks/taps the 
         (x) icon located on the far right of the notication title. 
       */

@@ -1,23 +1,25 @@
+import 'dart:math';
+
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:pray_for_me/src/views/home/layouts/home_landscape.dart';
-import 'package:pray_for_me/src/views/home/layouts/home_large_screen.dart';
-import 'package:pray_for_me/src/views/home/layouts/home_portrait.dart';
 
-// import '../../helpers/theme_constants.dart';
+import '../../helpers/dimensions.dart';
+import '../../helpers/theme_constants.dart';
+import '../../models/prayer.dart';
+import '../settings/settings_view.dart';
 
-class HomeLayoutManager extends StatefulWidget {
+part 'layouts/home_landscape.dart';
+part 'layouts/home_large_screen.dart';
+part 'layouts/home_portrait.dart';
+
+class HomeLayoutManager extends StatelessWidget {
   static const routeName = '/home';
-  const HomeLayoutManager({super.key});
+  final List<Prayer> loadedDatabase;
+
+  const HomeLayoutManager({super.key, required this.loadedDatabase});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _HomeLayoutManagerState createState() => _HomeLayoutManagerState();
-}
-
-class _HomeLayoutManagerState extends State<HomeLayoutManager> {
-    @override
   Widget build(BuildContext context) {
-    
     var mediaQuery = MediaQuery.of(context);
     var screenWidth = mediaQuery.size.width;
 
@@ -26,11 +28,12 @@ class _HomeLayoutManagerState extends State<HomeLayoutManager> {
     //add animations to the transitions/loading the required screen
 
     if (screenWidth > 600) {
-      return const HomeLargeScreen();
+      return HomeLargeScreen(
+        accessingDatabase: loadedDatabase,
+      );
     } else if (screenOrientation == Orientation.portrait) {
       return const HomePortrait();
     }
     return const HomeLandscape();
   }
-
 }

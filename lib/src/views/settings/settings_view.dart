@@ -22,36 +22,28 @@ class SettingsView extends StatelessWidget {
             onChanged: controller.updateThemeData,
             items: [
               DropdownMenuItem(
-                value: themeChange("classicLight"),
-                child: const Text('Classic Light'),
+                value: themeChange("America"),
+                child: const Text('America'),
               ),
               DropdownMenuItem(
-                value: themeChange("classicDark"),
-                child: const Text('Classic Dark'),
+                value: themeChange("Delux"),
+                child: const Text('Delux'),
               ),
               DropdownMenuItem(
-                value: themeChange("cloud9"),
-                child: const Text('Day Break'),
+                value: themeChange("The_Ocean"),
+                child: const Text('The Ocean'),
               ),
               DropdownMenuItem(
-                value: themeChange("summer"),
-                child: const Text('Hot Summer'),
+                value: themeChange("Natures_Call"),
+                child: const Text("Nature's Call"),
               ),
               DropdownMenuItem(
-                value: themeChange("autumn"),
-                child: const Text('Autumn Dawn'),
+                value: themeChange("Whisper"),
+                child: const Text('Whisper'),
               ),
               DropdownMenuItem(
-                value: themeChange("dusk"),
-                child: const Text('Dusk Night'),
-              ),
-              DropdownMenuItem(
-                value: themeChange("midnight"),
-                child: const Text('NewYork Night'),
-              ),
-              DropdownMenuItem(
-                value: themeChange("winter"),
-                child: const Text('Winter Night'),
+                value: themeChange("Authors_Notes"),
+                child: const Text("Author's Notes"),
               ),
             ],
           )),

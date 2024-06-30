@@ -1,18 +1,22 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:pray_for_me/src/views/prayers/prayer_view.dart';
-import '../../services/loading_service.dart';
+import 'package:pray_for_me/src/models/prayer.dart';
 import '../../global_widgets/p4m_playground/animations/ellipses_animation.dart';
 import '../../global_widgets/p4m_playground/animations/line_animation.dart';
-import '../../global_widgets/p4m_playground/animations/page_transition_1.dart';
-import '../../services/path_provider_service.dart';
-// ignore: unused_import
+import '../../services/loading_service.dart';
 import '../home/home_layout_manager.dart';
 
+//Loading a new Library should trigger splash and route home.
+//reason being that perhaps the user does not wish to load the default library
 class SplashView extends StatefulWidget {
   final String libraryName;
+  final String librarySize;
+  final LoadingService loadingService;
 
-  const SplashView({super.key, required this.libraryName});
+  const SplashView(
+      {super.key,
+      required this.loadingService,
+      required this.libraryName,
+      required this.librarySize});
 
   static const routeName = '/splash';
 
@@ -21,10 +25,10 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  final LoadingService _loadingService = LoadingService(PathProviderService());
   bool dataLoaded = false;
   bool animationCompleted = false;
   bool showEllipses = true;
+  List<Prayer> prayerDatabase = [];
 
   @override
   void initState() {
@@ -33,11 +37,14 @@ class _SplashViewState extends State<SplashView> {
   }
 
   Future<void> _loadData() async {
-    // await _loadingService.loadUserData();
-    if (kDebugMode) {
-      print("splash loaded here is the library name: ${widget.libraryName}");
-    }
-    await _loadingService.loadPrayerLibrary(widget.libraryName);
+    // if (kDebugMode) {
+    //   print("splash loaded here is the library name: ${widget.libraryName}");
+    // }
+    prayerDatabase = (await widget.loadingService
+        .loadPrayerLibrary(widget.libraryName, widget.librarySize));
+    //This test is loading user saved library without p4m_library_seed
+    //i.e. the default p4m library
+    // prayerDatabase =(await widget.loadingService.onlyLoadUserLibrary("TestLibraryStorage"));
     setState(() {
       dataLoaded = true;
     });
@@ -61,10 +68,11 @@ class _SplashViewState extends State<SplashView> {
   void _navigateToHome() {
     Navigator.pushReplacement(
       context,
-      createRouteWithTransition(const PrayerView(), PrayerView.routeName
-          // const HomeLayoutManager(),
-          // HomeLayoutManager.routeName,
-          ),
+      MaterialPageRoute(
+        builder: (context) => HomeLayoutManager(
+          loadedDatabase: prayerDatabase,
+        ),
+      ),
     );
   }
 

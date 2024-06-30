@@ -1,8 +1,4 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/material.dart';
-
-import '../../../helpers/dimensions.dart';
-import '../../../helpers/theme_constants.dart';
+part of '../home_layout_manager.dart';
 
 class HomeLandscape extends StatefulWidget {
   const HomeLandscape({
@@ -14,6 +10,27 @@ class HomeLandscape extends StatefulWidget {
 }
 
 class _HomeLandscapeState extends State<HomeLandscape> {
+  Container ad2(loadWidgets) {
+    if (loadWidgets == true) {
+      return Container(
+        width: Dimensions.p4mScreenWidth,
+        height: Dimensions.p4mScreenWidth,
+        decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
+        child: const Text("Container Live on land"),
+      );
+    }
+    return Container(
+      alignment: Alignment.bottomCenter,
+      child: AnimatedTextKit(
+        pause: Durations.extralong4,
+        animatedTexts: [
+          FadeAnimatedText('P 4 M_Land'),
+        ],
+        repeatForever: true,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     int displayedImage = 3;
@@ -37,26 +54,5 @@ class _HomeLandscapeState extends State<HomeLandscape> {
       //   child: Text("Hi there on Large Friend"),
       // ),
     ));
-  }
-
-  Container ad2(loadWidgets) {
-    if (loadWidgets == true) {
-      return Container(
-        width: Dimensions.p4mScreenWidth,
-        height: Dimensions.p4mScreenWidth,
-        decoration: BoxDecoration(color: Colors.black.withOpacity(0.2)),
-        child: const Text("Container Live on land"),
-      );
-    }
-    return Container(
-      alignment: Alignment.bottomCenter,
-      child: AnimatedTextKit(
-        pause: Durations.extralong4,
-        animatedTexts: [
-          FadeAnimatedText('P 4 M_Land'),
-        ],
-        repeatForever: true,
-      ),
-    );
   }
 }
