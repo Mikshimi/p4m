@@ -13,6 +13,7 @@ class HomeLargeScreen extends StatefulWidget {
 
 class _HomeLargeScreenState extends State<HomeLargeScreen> {
   List<Prayer> _prayers = [];
+  // ignore: prefer_final_fields
   List<Prayer> _userCreatedPrayers = [];
   late Prayer _selectedPrayer;
 

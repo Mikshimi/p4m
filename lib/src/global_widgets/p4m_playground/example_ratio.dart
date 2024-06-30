@@ -19,7 +19,7 @@ class ExampleWidget extends StatelessWidget {
               color: Colors.blue,
             ),
             SizedBox(height: Dimensions.p4mVerticalSpaceMedium.height),
-            Text(
+            const Text(
               'Hello, World!',
               style: TextStyle(
                 // fontSize: Dimensions.prayerTextFontSizeMedium,

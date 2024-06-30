@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pray_for_me/src/bloc/prayer_bloc.dart';
+import 'package:pray_for_me/src/bloc/prayer_event.dart';
+import 'package:pray_for_me/src/bloc/prayer_state.dart';
 import 'package:pray_for_me/src/models/prayer.dart';
+import '../home/home_layout_manager.dart';
 import '../../global_widgets/p4m_playground/animations/ellipses_animation.dart';
 import '../../global_widgets/p4m_playground/animations/line_animation.dart';
-import '../../services/loading_service.dart';
-import '../home/home_layout_manager.dart';
 
-//Loading a new Library should trigger splash and route home.
-//reason being that perhaps the user does not wish to load the default library
 class SplashView extends StatefulWidget {
   final String libraryName;
   final String librarySize;
-  final LoadingService loadingService;
 
-  const SplashView(
-      {super.key,
-      required this.loadingService,
-      required this.libraryName,
-      required this.librarySize});
+  const SplashView({super.key, required this.libraryName, required this.librarySize});
 
   static const routeName = '/splash';
 
@@ -36,18 +32,8 @@ class _SplashViewState extends State<SplashView> {
     _loadData();
   }
 
-  Future<void> _loadData() async {
-    // if (kDebugMode) {
-    //   print("splash loaded here is the library name: ${widget.libraryName}");
-    // }
-    prayerDatabase = (await widget.loadingService
-        .loadPrayerLibrary(widget.libraryName, widget.librarySize));
-    //This test is loading user saved library without p4m_library_seed
-    //i.e. the default p4m library
-    // prayerDatabase =(await widget.loadingService.onlyLoadUserLibrary("TestLibraryStorage"));
-    setState(() {
-      dataLoaded = true;
-    });
+  void _loadData() {
+    context.read<PrayerBloc>().add(LoadPrayerLibrary(libraryName: widget.libraryName, prayerSize: widget.librarySize));
   }
 
   void _onEllipsesAnimationComplete() {
@@ -79,36 +65,50 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            if (dataLoaded)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  LineAnimation(
-                    letter: 'P',
-                    onAnimationComplete: _onAnimationComplete,
-                  ),
-                  const SizedBox(width: 10),
-                  LineAnimation(
-                    letter: '4',
-                    onAnimationComplete: _onAnimationComplete,
-                  ),
-                  const SizedBox(width: 10),
-                  LineAnimation(
-                    letter: 'M',
-                    onAnimationComplete: _onAnimationComplete,
-                  ),
-                ],
-              ),
-            const SizedBox(height: 20),
-            EllipsesAnimation(
-                onAnimationComplete: _onEllipsesAnimationComplete),
-          ],
+      body: BlocListener<PrayerBloc, PrayerState>(
+        listener: (context, state) {
+          if (state is PrayerLibraryLoaded) {
+            setState(() {
+              prayerDatabase = state.prayers;
+              dataLoaded = true;
+              if (animationCompleted) {
+                _navigateToHome();
+              }
+            });
+          } else if (state is PrayerLibraryError) {
+            // Handle error state if needed
+          }
+        },
+        child: SizedBox(
+          height: double.infinity,
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (dataLoaded)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    LineAnimation(
+                      letter: 'P',
+                      onAnimationComplete: _onAnimationComplete,
+                    ),
+                    const SizedBox(width: 10),
+                    LineAnimation(
+                      letter: '4',
+                      onAnimationComplete: _onAnimationComplete,
+                    ),
+                    const SizedBox(width: 10),
+                    LineAnimation(
+                      letter: 'M',
+                      onAnimationComplete: _onAnimationComplete,
+                    ),
+                  ],
+                ),
+              const SizedBox(height: 20),
+              EllipsesAnimation(onAnimationComplete: _onEllipsesAnimationComplete),
+            ],
+          ),
         ),
       ),
     );
