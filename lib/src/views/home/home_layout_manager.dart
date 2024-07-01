@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../helpers/dimensions.dart';
 import '../../helpers/theme_constants.dart';
-import '../../models/prayer.dart';
+import '../../data/models/prayer.dart';
 import '../settings/settings_view.dart';
 
 part 'layouts/home_landscape.dart';

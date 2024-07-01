@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import '../../services/loading_service.dart';
-import '../../models/prayer.dart';
+import '../../data/models/prayer.dart';
 // import '../../services/path_provider_service.dart';
 
 class PrayerView extends StatefulWidget {
